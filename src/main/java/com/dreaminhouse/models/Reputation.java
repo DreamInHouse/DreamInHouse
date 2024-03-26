@@ -6,7 +6,7 @@ package com.dreaminhouse.models;
 public class Reputation {
     public static int MAX_RATING = 10;
     public static int MIN_RATING = 1;
-    int ratingValue;
+    Integer ratingValue;
 
     public void setRatingValue(int ratingValue) {
         if (ratingValue > MAX_RATING) {
@@ -18,7 +18,11 @@ public class Reputation {
         }
     }
 
-    public int getRatingValue() {
+    public int getRating() {
         return ratingValue;
+    }
+
+    public String getRatingStylized() {
+        return ratingValue.toString();
     }
 }
