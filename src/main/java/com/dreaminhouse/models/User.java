@@ -19,8 +19,8 @@ public class User {
 
     /* Login Credentials */
     private String userName;
-    private Password userPassword; /* use PBKDF2 */
-    private int recoveryCode;
+    private Password userPassword;
+    private Password recoveryCode;
 
     /* User Credentials */
     private String fullName;
@@ -104,11 +104,11 @@ public class User {
         this.userPassword = userPassword;
     }
 
-    public int getRecoveryCode() {
+    public Password getRecoveryCode() {
         return recoveryCode;
     }
 
-    public void setRecoveryCode(int recoveryCode) {
+    public void setRecoveryCode(Password recoveryCode) {
         this.recoveryCode = recoveryCode;
     }
 
