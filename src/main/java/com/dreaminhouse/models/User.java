@@ -2,7 +2,7 @@ package com.dreaminhouse.models;
 
 import java.util.ArrayList;
 import java.time.LocalDateTime;
-// import java.awt.image.BufferedImage;
+import java.awt.image.BufferedImage;
 
 /**
  * User
@@ -13,22 +13,21 @@ public class User {
     private Reputation reputation;
     private ArrayList<Connection> connections;
     private boolean isAdministrator;
-    private boolean isDeleted;
+    private boolean isPropertyOwner;
     private LocalDateTime creationDateTime;
     private LocalDateTime updateDateTime;
 
     /* Login Credentials */
     private String userName;
-    private byte[] passwordHash; /* use PBKDF2 */ 
+    private Password userPassword; /* use PBKDF2 */
     private int recoveryCode;
 
     /* User Credentials */
-    // private String firstName;
-    // private String familyName;
-    // private String contactEmail;
-    // private String contactPhone;
-    // private BufferedImage profilePicture;
-    // private Address residenceAddress;
+    private String fullName;
+    private String contactEmail;
+    private String contactPhone;
+    private BufferedImage profilePicture;
+    private Address residenceAddress;
 
 
     public int getUserId() {
@@ -63,12 +62,12 @@ public class User {
         this.isAdministrator = isAdministrator;
     }
 
-    public boolean getDeleted() {
-        return isDeleted;
+    public boolean isPropertyOwner() {
+        return isPropertyOwner;
     }
 
-    public void setDeleted(boolean isDeleted) {
-        this.isDeleted = isDeleted;
+    public void setPropertyOwner(boolean isPropertyOwner) {
+        this.isPropertyOwner = isPropertyOwner;
     }
 
     public LocalDateTime getCreationDateTime() {
@@ -95,12 +94,12 @@ public class User {
         this.userName = userName;
     }
 
-    public byte[] getPasswordHash() {
-        return passwordHash;
+    public Password getUserPassword() {
+        return userPassword;
     }
 
-    public void setPasswordHash(byte[] passwordHash) {
-        this.passwordHash = passwordHash;
+    public void setUserPassword(Password userPassword) {
+        this.userPassword = userPassword;
     }
 
     public int getRecoveryCode() {
@@ -111,51 +110,52 @@ public class User {
         this.recoveryCode = recoveryCode;
     }
 
-    // public String getFirstName() {
-    //     return firstName;
-    // }
+    public String getFullName() {
+        return fullName;
+    }
 
-    // public void setFirstName(String firstName) {
-    //     this.firstName = firstName;
-    // }
+    public void setFullName(String fullName) {
+        this.fullName = fullName;
+    }
 
-    // public String getFamilyName() {
-    //     return familyName;
-    // }
+    public String getFirstName() {
+        return fullName.split(" ")[0];
+    }
 
-    // public void setFamilyName(String familyName) {
-    //     this.familyName = familyName;
-    // }
+    public String getFamilyNames() {
+        String firstName = getFirstName();
+        return fullName.substring(firstName.length(), fullName.length());
+    }
 
-    // public String getContactEmail() {
-    //     return contactEmail;
-    // }
+    public String getContactEmail() {
+        return contactEmail;
+    }
 
-    // public void setContactEmail(String contactEmail) {
-    //     this.contactEmail = contactEmail;
-    // }
+    public void setContactEmail(String contactEmail) {
+        this.contactEmail = contactEmail;
+    }
 
-    // public String getContactPhone() {
-    //     return contactPhone;
-    // }
+    public String getContactPhone() {
+        return contactPhone;
+    }
 
-    // public void setContactPhone(String contactPhone) {
-    //     this.contactPhone = contactPhone;
-    // }
+    public void setContactPhone(String contactPhone) {
+        this.contactPhone = contactPhone;
+    }
 
-    // public BufferedImage getProfilePicture() {
-    //     return profilePicture;
-    // }
+    public BufferedImage getProfilePicture() {
+        return profilePicture;
+    }
 
-    // public void setProfilePicture(BufferedImage profilePicture) {
-    //     this.profilePicture = profilePicture;
-    // }
+    public void setProfilePicture(BufferedImage profilePicture) {
+        this.profilePicture = profilePicture;
+    }
 
-    // public Address getResidenceAddress() {
-    //     return residenceAddress;
-    // }
+    public Address getResidenceAddress() {
+        return residenceAddress;
+    }
 
-    // public void setResidenceAddress(Address residenceAddress) {
-    //     this.residenceAddress = residenceAddress;
-    // }
+    public void setResidenceAddress(Address residenceAddress) {
+        this.residenceAddress = residenceAddress;
+    }
 }
