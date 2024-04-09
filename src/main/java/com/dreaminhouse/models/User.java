@@ -24,6 +24,8 @@ public class User {
 
     /* User Credentials */
     private String fullName;
+    private Gender gender;
+    private MaritalStatus maritalStatus;
     private String contactEmail;
     private String contactPhone;
     private BufferedImage profilePicture;
@@ -125,6 +127,22 @@ public class User {
     public String getFamilyNames() {
         String firstName = getFirstName();
         return fullName.substring(firstName.length(), fullName.length());
+    }
+
+    public Gender getGender() {
+        return gender;
+    }
+
+    public void setGender(Gender gender) {
+        this.gender = gender;
+    }
+
+    public MaritalStatus getMaritalStatus() {
+        return maritalStatus;
+    }
+
+    public void setMaritalStatus(MaritalStatus maritalStatus) {
+        this.maritalStatus = maritalStatus;
     }
 
     public String getContactEmail() {
