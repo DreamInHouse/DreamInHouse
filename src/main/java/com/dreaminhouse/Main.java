@@ -16,10 +16,10 @@ public class Main {
         uController.createUser("Claudio");
         uController.createUser("Marcelo");
 
-        MainWindow mainWindow = new MainWindow();
-
         for (User user : UserController.getAllUsers()) {
             System.out.format("User: %s\n", user.getUserName());
         }
+
+        new MainWindow();
     }
 }
