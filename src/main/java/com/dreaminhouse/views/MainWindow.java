@@ -1,4 +1,4 @@
-package com.dreaminhouse;
+package com.dreaminhouse.views;
 
 import javax.swing.*;
 import java.awt.*;
