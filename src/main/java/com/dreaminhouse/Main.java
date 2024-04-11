@@ -2,6 +2,7 @@ package com.dreaminhouse;
 
 import com.dreaminhouse.controllers.UserController;
 import com.dreaminhouse.models.User;
+import com.dreaminhouse.views.MainWindow;
 
 /**
  * Main
