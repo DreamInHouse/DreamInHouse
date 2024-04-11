@@ -2,6 +2,7 @@ package com.dreaminhouse;
 
 import com.dreaminhouse.controllers.UserController;
 import com.dreaminhouse.models.User;
+import com.dreaminhouse.platform.OperatingSystem;
 import com.dreaminhouse.views.MainWindow;
 
 /**
@@ -10,6 +11,9 @@ import com.dreaminhouse.views.MainWindow;
 public class Main {
     public static void main(String[] args) {
         System.out.println("Hello, world!");
+
+        // Operating System Handling
+        new OperatingSystem();
 
         // Testing context controller
         System.out.println("\u001b[33mTesting Context Manager\u001b[00m");
