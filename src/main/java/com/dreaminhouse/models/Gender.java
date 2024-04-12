@@ -16,6 +16,13 @@ public class Gender {
     private GenderType type;
     private String customOther;
 
+    public Gender(GenderType genderType, String other) {
+        this.type = genderType;
+        if (this.type == GenderType.OTHER) {
+            this.customOther = other;
+        }
+    }
+
     public GenderType getType() {
         return type;
     }
