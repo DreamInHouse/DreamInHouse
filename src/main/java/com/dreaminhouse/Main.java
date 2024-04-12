@@ -18,12 +18,12 @@ public class Main {
         // Testing context controller
         System.out.println("\u001b[33mTesting Context Manager\u001b[00m");
         UserController uController = new UserController();
-        uController.createUser("Claudio");
-        uController.createUser("Marcelo");
+        // uController.createUser("Claudio");
+        // uController.createUser("Marcelo");
 
-        for (User user : UserController.getAllUsers()) {
-            System.out.format("User: %s\n", user.getUserName());
-        }
+        // for (User user : UserController.getAllUsers()) {
+        //     System.out.format("User: %s\n", user.getUserName());
+        // }
 
         new MainWindow();
     }
