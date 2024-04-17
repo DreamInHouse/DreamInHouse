@@ -10,3 +10,5 @@ public class Icons {
         return new ImageIcon(Icons.class.getResource("/icons/" + iconName + ".png"));
     }
 }
+
+Icons.getIcon("nome sem extenção")

@@ -24,7 +24,7 @@ public class MainCadastro extends JFrame {
         gbc.gridwidth = 2;
         gbc.insets = new Insets(20, 0, 20, 0);
 
-        JLabel titleLabel = new JLabel("Cadastro");
+        JLabel titleLabel = new JLabel("Criar conta");
         titleLabel.setFont(new Font("SansSerif", Font.BOLD, 28)); 
         titleLabel.setForeground (new Color(51, 204, 255));
         panel.add(titleLabel, gbc);
