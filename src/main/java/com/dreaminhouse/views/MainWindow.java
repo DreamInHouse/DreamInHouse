@@ -25,7 +25,7 @@ public class MainWindow extends JFrame {
         gbc.insets = new Insets(20, 0, 20, 0);
 
         JLabel titleLabel = new JLabel("DreamInHouse");
-        titleLabel.setFont(new Font("Berkshire Swash", Font.BOLD, 28)); 
+        titleLabel.setFont(new Font("HELVETICA", Font.BOLD, 28)); 
         titleLabel.setForeground (new Color(51, 204, 255));
         panel.add(titleLabel, gbc);
 
@@ -46,6 +46,7 @@ public class MainWindow extends JFrame {
         passwordField.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)));
         addPlaceholder(passwordField, "Password");
         panel.add(passwordField, gbc);
+
 
         gbc.gridy++;
         gbc.insets = new Insets(10, 20, 20, 20);
@@ -70,8 +71,25 @@ public class MainWindow extends JFrame {
 
         add(panel);
         setVisible(true);
-    }
 
+        gbc.gridy++;
+        gbc.insets = new Insets(10, 20, 20, 20);
+        JButton cadastroButton = new JButton("Não tem uma conta? Cadastre-se");
+        cadastroButton.setPreferredSize(new Dimension(150, 40));
+        cadastroButton.setBackground(new Color(240, 240, 240));
+        cadastroButton.setForeground(new Color(51, 204, 255));
+        cadastroButton.setFont(new Font("Helvetica", Font.BOLD, 16));
+        cadastroButton.setBorderPainted(false);
+        cadastroButton.addActionListener(
+            (ActionEvent e) -> {
+                setVisible(false);
+                MainCadastro cadastro = new MainCadastro();
+                cadastro.setVisible(true);
+            }
+        );
+        panel.add(cadastroButton, gbc);
+    }
+    
     private void addPlaceholder(JTextField field, String placeholder) {
         field.setForeground(new Color(180, 180, 180));
         field.setFont(field.getFont().deriveFont(Font.ITALIC));
