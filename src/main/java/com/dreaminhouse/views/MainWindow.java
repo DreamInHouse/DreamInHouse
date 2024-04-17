@@ -25,7 +25,8 @@ public class MainWindow extends JFrame {
         gbc.insets = new Insets(20, 0, 20, 0);
 
         JLabel titleLabel = new JLabel("DreamInHouse");
-        titleLabel.setFont(new Font("Helvetica", Font.BOLD, 28));
+        titleLabel.setFont(new Font("Berkshire Swash", Font.BOLD, 28)); 
+        titleLabel.setForeground (new Color(51, 204, 255));
         panel.add(titleLabel, gbc);
 
         gbc.gridy++;
@@ -48,9 +49,9 @@ public class MainWindow extends JFrame {
 
         gbc.gridy++;
         gbc.insets = new Insets(10, 20, 20, 20);
-        JButton loginButton = new JButton("Login");
+        JButton loginButton = new JButton("Entrar");
         loginButton.setPreferredSize(new Dimension(150, 40));
-        loginButton.setBackground(new Color(0, 149, 246));
+        loginButton.setBackground(new Color(51, 204, 255));
         loginButton.setForeground(Color.WHITE);
         loginButton.setFont(new Font("Helvetica", Font.BOLD, 16));
         loginButton.setBorderPainted(false);
