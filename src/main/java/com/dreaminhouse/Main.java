@@ -1,11 +1,14 @@
 package com.dreaminhouse;
 
 
+import java.awt.Font;
+
 import com.dreaminhouse.controllers.UserController;
 import com.dreaminhouse.models.User;
 import com.dreaminhouse.platform.OperatingSystem;
 import com.dreaminhouse.views.MainWindow;
 
+import com.dreaminhouse.platform.Fonts;
 import com.dreaminhouse.platform.Theme;
 
 /**
@@ -23,6 +26,9 @@ public class Main {
         UserController uController = new UserController();
         // uController.createUser("Claudio");
         // uController.createUser("Marcelo");
+
+        // Register Local Fonts
+        new Fonts();
 
         // Install Theme
         new Theme();
