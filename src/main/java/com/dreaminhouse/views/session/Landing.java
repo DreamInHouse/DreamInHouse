@@ -54,16 +54,16 @@ public class Landing extends JPanel {
         // Create Account
         JPanel createAccountPanel = new JPanel();
         createAccountPanel.setBackground(Constants.BACKGROUND_COLOR);
-        JLabel aadsfadsf = new JLabel("Não tem uma conta?");
-        aadsfadsf.setFont(Constants.TEXT_FONT);
-        createAccountPanel.add(aadsfadsf);
+        JLabel createAccountLabel = new JLabel("Não tem uma conta?");
+        createAccountLabel.setFont(Constants.TEXT_FONT);
+        createAccountPanel.add(createAccountLabel);
 
-        JButton aadsfadsf2 = new JButton("Cadastre-se");
-        aadsfadsf2.setFont(Constants.TEXT_FONT);
-        aadsfadsf2.setForeground(Constants.TITLE_COLOR);
-        aadsfadsf2.setBackground(Constants.BACKGROUND_COLOR);
-        aadsfadsf2.setBorderPainted(false);
-        createAccountPanel.add(aadsfadsf2);
+        JButton createAccountButton = new JButton("Cadastre-se");
+        createAccountButton.setFont(Constants.TEXT_FONT);
+        createAccountButton.setForeground(Constants.TITLE_COLOR);
+        createAccountButton.setBackground(Constants.BACKGROUND_COLOR);
+        createAccountButton.setBorderPainted(false);
+        createAccountPanel.add(createAccountButton);
 
         add(createAccountPanel, "center, span");
     }
