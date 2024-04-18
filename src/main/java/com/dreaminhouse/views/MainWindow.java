@@ -1,6 +1,9 @@
 package com.dreaminhouse.views;
 
 import javax.swing.*;
+
+import com.dreaminhouse.platform.Fonts;
+
 import java.awt.*;
 import java.awt.event.*;
 
@@ -25,7 +28,7 @@ public class MainWindow extends JFrame {
         gbc.insets = new Insets(20, 0, 20, 0);
 
         JLabel titleLabel = new JLabel("DreamInHouse");
-        titleLabel.setFont(new Font("HELVETICA", Font.BOLD, 28)); 
+        titleLabel.setFont(new Font("Berkshire Swash", Font.BOLD, 28)); 
         titleLabel.setForeground (new Color(51, 204, 255));
         panel.add(titleLabel, gbc);
 
