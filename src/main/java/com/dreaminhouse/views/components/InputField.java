@@ -42,4 +42,8 @@ public class InputField extends JPanel {
         this.inputField.setFont(font);
         add(this.inputField, "center, growx, span");
     }
+
+    public void clearInput() {
+        this.inputField.setText("");
+    }
 }
