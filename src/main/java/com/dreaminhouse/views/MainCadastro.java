@@ -34,7 +34,7 @@ public class MainCadastro extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(0, 20, 10, 20);
 
-        JLabel nomeLabel = new JLabel("Nome");
+        JLabel nomeLabel = new JLabel("Nome*");
         nomeLabel.setFont(new Font("HELVETICA", Font.BOLD, 20)); 
         nomeLabel.setForeground (Color.BLACK);
         panel.add(nomeLabel, gbc);
@@ -54,7 +54,7 @@ public class MainCadastro extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(0, 20, 10, 20);
 
-        JLabel usernameLabel = new JLabel("Username");
+        JLabel usernameLabel = new JLabel("Username*");
         usernameLabel.setFont(new Font("HELVETICA", Font.BOLD, 20)); 
         usernameLabel.setForeground (Color.BLACK);
         panel.add(usernameLabel, gbc);
@@ -74,7 +74,7 @@ public class MainCadastro extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(0, 20, 10, 20);
 
-        JLabel emailLabel = new JLabel("E-mail");
+        JLabel emailLabel = new JLabel("E-mail*");
         emailLabel.setFont(new Font("HELVETICA", Font.BOLD, 20)); 
         emailLabel.setForeground (Color.BLACK);
         panel.add(emailLabel, gbc);
@@ -94,7 +94,7 @@ public class MainCadastro extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(0, 20, 10, 20);
 
-        JLabel telefoneLabel = new JLabel("Telefone");
+        JLabel telefoneLabel = new JLabel("Telefone*");
         telefoneLabel.setFont(new Font("HELVETICA", Font.BOLD, 20)); 
         telefoneLabel.setForeground (Color.BLACK);
         panel.add(telefoneLabel, gbc);
@@ -114,7 +114,7 @@ public class MainCadastro extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
         gbc.insets = new Insets(0, 20, 10, 20);
 
-        JLabel dataLabel = new JLabel("Data de nascimento");
+        JLabel dataLabel = new JLabel("Data de nascimento*");
         dataLabel.setFont(new Font("HELVETICA", Font.BOLD, 20)); 
         dataLabel.setForeground (Color.BLACK);
         panel.add(dataLabel, gbc);
@@ -129,6 +129,26 @@ public class MainCadastro extends JFrame {
         dataField.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)));
         panel.add(dataField, gbc);
 
-        add(panel);
+        gbc.gridy++;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(0, 20, 10, 20);
+
+        JLabel generoLabel = new JLabel("Gênero");
+        generoLabel.setFont(new Font("HELVETICA", Font.BOLD, 20)); 
+        generoLabel.setForeground (Color.BLACK);
+        panel.add(generoLabel, gbc);
+
+        gbc.gridy++;
+        gbc.gridwidth = 1;
+        gbc.fill = GridBagConstraints.HORIZONTAL;
+        gbc.insets = new Insets(0, 20, 10, 20);
+    
+        JTextField generoField = new JTextField();
+        generoField.setPreferredSize(new Dimension(300, 40));
+        generoField.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)));
+        panel.add(generoField, gbc);
+
+     add(panel);
     }
 }
