@@ -121,8 +121,4 @@ public class MainWindow extends JFrame {
     private void openHomeScreen() {
         // Implementação da tela inicial
     }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(MainWindow::new);
-    }
 }
