@@ -37,15 +37,15 @@ public class Landing extends NavigablePanel {
 
         // Title
         this.title = new JLabel(Constants.PROJECT_NAME);
-        title.setFont(Constants.TITLE_FONT);
+        title.setFont(Constants.TITLE_FONT.deriveFont(56f));
         title.setForeground(Constants.TITLE_COLOR);
         add(title, "center, span");
 
         // Username Field
-        this.usernameField = new InputField("Usuário:", true, Constants.TEXT_FONT);
+        this.usernameField = new InputField("Usuário:", false, Constants.TEXT_FONT);
         add(usernameField, "center, grow, span");
 
-        this.passwordField = new InputField("Senha:", true, Constants.TEXT_FONT);
+        this.passwordField = new InputField("Senha:", false, Constants.TEXT_FONT);
         add(passwordField, "center, grow, span");
 
         // Login Button

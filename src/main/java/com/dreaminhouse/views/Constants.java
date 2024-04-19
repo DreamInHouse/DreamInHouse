@@ -21,4 +21,5 @@ public class Constants {
 
     // Dimensions
     public static Dimension MINIMUM_SIZE = new Dimension(800, 600);
+    public static Dimension MINIMUM_SEPARATOR_SIZE = new Dimension(2, 2); /* Work around dynamic JSeparators */
 }
