@@ -47,11 +47,17 @@ public class AccountCreationNext extends NavigablePanel {
         add(headerSeparator, "center, growx, span");
 
         // Camera
-        CameraPanel cameraPanel = new CameraPanel();
-        cameraPanel.getCaptureButton().setFont(Constants.TEXT_FONT);
-        cameraPanel.getCaptureButton().setBackground(Constants.TITLE_COLOR);
-        cameraPanel.getCaptureButton().setForeground(Color.WHITE);
-        this.add(cameraPanel.getPanel(), "center, span");
-        this.add(cameraPanel.getCaptureButton(), "center, span");
+        try {
+            CameraPanel cameraPanel = new CameraPanel();
+            cameraPanel.getCaptureButton().setFont(Constants.TEXT_FONT);
+            cameraPanel.getCaptureButton().setBackground(Constants.TITLE_COLOR);
+            cameraPanel.getCaptureButton().setForeground(Color.WHITE);
+            this.add(cameraPanel.getPanel(), "center, span");
+            this.add(cameraPanel.getCaptureButton(), "center, span");
+        } catch (NullPointerException e) {
+            JLabel cameraErrorLabel = new JLabel("Câmera não está disponível");
+            cameraErrorLabel.setFont(Constants.TEXT_FONT);
+            this.add(cameraErrorLabel, "center, span");
+        }
     }
 }
