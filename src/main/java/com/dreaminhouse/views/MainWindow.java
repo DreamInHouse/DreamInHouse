@@ -4,6 +4,7 @@ import javax.swing.*;
 
 import com.dreaminhouse.views.feed.UserFeed;
 import com.dreaminhouse.views.session.AccountCreation;
+import com.dreaminhouse.views.session.AccountCreationNext;
 import com.dreaminhouse.views.session.Landing;
 import com.dreaminhouse.views.session.PasswordRecovery;
 
@@ -14,6 +15,7 @@ public class MainWindow extends JFrame {
     private JPanel contentPanel;
     public Landing landingPanel;
     public AccountCreation accountCreationPanel;
+    public AccountCreationNext accountCreationNextPanel;
     public PasswordRecovery passwordRecoveryPanel;
     public UserFeed userFeedPanel;
 
@@ -39,6 +41,9 @@ public class MainWindow extends JFrame {
 
         this.accountCreationPanel = new AccountCreation();
         this.contentPanel.add(this.accountCreationPanel, AccountCreation.IDENTIFIER);
+
+        this.accountCreationNextPanel = new AccountCreationNext();
+        this.contentPanel.add(this.accountCreationNextPanel, AccountCreationNext.IDENTIFIER);
 
         this.passwordRecoveryPanel = new PasswordRecovery();
         this.contentPanel.add(this.passwordRecoveryPanel, PasswordRecovery.IDENTIFIER);

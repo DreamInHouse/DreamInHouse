@@ -4,7 +4,6 @@ package com.dreaminhouse;
 import java.awt.Font;
 
 import com.dreaminhouse.controllers.UserController;
-import com.dreaminhouse.models.User;
 import com.dreaminhouse.platform.OperatingSystem;
 import com.dreaminhouse.views.MainWindow;
 

@@ -28,6 +28,7 @@ public class CameraPanel {
         // Webcam
         this.camera = Webcam.getDefault();
         this.camera.setViewSize(WebcamResolution.VGA.getSize());
+        this.camera.close();
 
         // Webcam Panel
         this.panel = new WebcamPanel(this.camera);
@@ -60,14 +61,20 @@ public class CameraPanel {
 
     private BufferedImage captureImage() {
         byte[] imageBytes = WebcamUtils.getImageBytes(this.camera, imageFormat);
+        openCamera();
         try {
-            BufferedImage capture = ImageIO.read(new ByteArrayInputStream(imageBytes));
+            this.capturedImage = ImageIO.read(new ByteArrayInputStream(imageBytes));
             System.out.format(
-                "Captured Image (%dx%d)", this.capturedImage.getWidth(), this.capturedImage.getHeight()
+                "Captured Image (%dx%d)\n", this.capturedImage.getWidth(), this.capturedImage.getHeight()
             );
-            return capture;
+            return this.capturedImage;
         } catch (IOException e) {
         }
+        this.camera.close();
         return null;
+    }
+
+    public void openCamera() {
+        this.camera.open();
     }
 }
