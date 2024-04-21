@@ -8,8 +8,10 @@ import javax.swing.JLabel;
 import javax.swing.JPanel;
 import javax.swing.JPasswordField;
 import javax.swing.JTextField;
+import javax.swing.KeyStroke;
 
 import com.dreaminhouse.views.Constants;
+import com.dreaminhouse.views.actions.FocusTransferrableAction;
 
 import net.miginfocom.swing.MigLayout;
 
@@ -51,6 +53,10 @@ public class InputField extends JPanel {
         }
         this.inputField.setMargin(new Insets(2,10,2,10));
         this.inputField.setFont(Constants.TEXT_FONT);
+        this.inputField.getInputMap().put(
+            KeyStroke.getKeyStroke(KeyEvent.VK_ENTER, 0),
+            new FocusTransferrableAction()
+        );
         add(this.inputField, "center, growx, span");
     }
 
