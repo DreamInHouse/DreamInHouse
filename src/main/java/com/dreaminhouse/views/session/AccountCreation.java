@@ -54,8 +54,8 @@ public class AccountCreation extends NavigablePanel {
         this.inputFields.setLayout(new MigLayout("center, fillx", "[]"));
         this.inputFields.setBackground(Constants.BACKGROUND_COLOR);
         this.inputFields.add(new InputField("Usuário", true, false), "grow, span");
-        this.inputFields.add(new InputField("Senha", true, true), "grow, span");
-        this.inputFields.add(new InputField("Repita a Senha", true, true), "grow, span");
+        this.inputFields.add(new InputField("Senha", true, true), "grow, split 1");
+        this.inputFields.add(new InputField("Repita a Senha", true, true), "grow, wrap");
         this.inputFields.add(new InputField("Nome Completo", true, false), "grow, span");
         this.inputFields.add(new InputField("Data de Nascimento", true, false), "grow, span");
         this.inputFields.add(new InputField("E-mail de Contato", false, false), "grow, span");
