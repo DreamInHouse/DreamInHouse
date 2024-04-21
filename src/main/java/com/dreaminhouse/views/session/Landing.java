@@ -47,10 +47,10 @@ public class Landing extends NavigablePanel {
         add(title, "center, span");
 
         // Username Field
-        this.usernameField = new InputField("Usuário:", false, Constants.TEXT_FONT);
+        this.usernameField = new InputField("Usuário:", false, false);
         add(usernameField, "center, grow, span");
 
-        this.passwordField = new InputField("Senha:", false, Constants.TEXT_FONT);
+        this.passwordField = new InputField("Senha:", false, true);
         add(passwordField, "center, grow, span");
 
         // Login Warning Message

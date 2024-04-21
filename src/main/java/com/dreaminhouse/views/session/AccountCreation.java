@@ -53,14 +53,14 @@ public class AccountCreation extends NavigablePanel {
         this.inputFields = new JPanel();
         this.inputFields.setLayout(new MigLayout("center, fillx", "[]"));
         this.inputFields.setBackground(Constants.BACKGROUND_COLOR);
-        this.inputFields.add(new InputField("Usuário", true, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("Senha", true, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("Repita a Senha", true, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("Nome Completo", true, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("Data de Nascimento", true, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("E-mail de Contato", false, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("Telefone de Contato", false, Constants.TEXT_FONT), "grow, span");
-        this.inputFields.add(new InputField("Gênero", false, Constants.TEXT_FONT), "grow, span");
+        this.inputFields.add(new InputField("Usuário", true, false), "grow, span");
+        this.inputFields.add(new InputField("Senha", true, true), "grow, span");
+        this.inputFields.add(new InputField("Repita a Senha", true, true), "grow, span");
+        this.inputFields.add(new InputField("Nome Completo", true, false), "grow, span");
+        this.inputFields.add(new InputField("Data de Nascimento", true, false), "grow, span");
+        this.inputFields.add(new InputField("E-mail de Contato", false, false), "grow, span");
+        this.inputFields.add(new InputField("Telefone de Contato", false, false), "grow, span");
+        this.inputFields.add(new InputField("Gênero", false, false), "grow, span");
 
         JScrollPane contentPanel = new JScrollPane(this.inputFields);
         contentPanel.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_AS_NEEDED);

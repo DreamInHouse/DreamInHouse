@@ -1,11 +1,12 @@
 package com.dreaminhouse.views.components;
 
 import java.awt.Insets;
-import java.awt.Font;
+import java.awt.event.KeyEvent;
 import java.awt.Color;
 
 import javax.swing.JLabel;
 import javax.swing.JPanel;
+import javax.swing.JPasswordField;
 import javax.swing.JTextField;
 
 import com.dreaminhouse.views.Constants;
@@ -18,14 +19,14 @@ public class InputField extends JPanel {
     private JLabel mandatoryMarker;
     private JTextField inputField;
 
-    public InputField(String labelText, boolean isMandatory, Font font) {
+    public InputField(String labelText, boolean isMandatory, boolean isPassword) {
         // Layout
         setLayout(new MigLayout("", "[][]"));
         setBackground(Constants.BACKGROUND_COLOR);
 
         // Label
         this.inputLabel = new JLabel(labelText);
-        this.inputLabel.setFont(font);
+        this.inputLabel.setFont(Constants.TEXT_FONT);
         add(this.inputLabel, "left");
 
         // Mandatory Marker
@@ -37,13 +38,19 @@ public class InputField extends JPanel {
         } else {
             this.isMandatory = false;
         }
-        this.mandatoryMarker.setFont(font);
+        this.mandatoryMarker.setFont(Constants.TEXT_FONT);
         add(this.mandatoryMarker, "left, pushx, wrap");
 
         // Input
-        this.inputField = new JTextField();
+        if (isPassword) {
+            JPasswordField passwordField = new JPasswordField();
+            passwordField.setEchoChar('*');
+            this.inputField = passwordField;
+        } else {
+            this.inputField = new JTextField();
+        }
         this.inputField.setMargin(new Insets(2,10,2,10));
-        this.inputField.setFont(font);
+        this.inputField.setFont(Constants.TEXT_FONT);
         add(this.inputField, "center, growx, span");
     }
 
