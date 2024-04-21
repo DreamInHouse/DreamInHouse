@@ -68,9 +68,6 @@ public class Landing extends NavigablePanel {
             (ActionEvent e) -> {
                 // Authenticate User
                 tryLogin();
-
-                // Clear input fields
-                clearAllFields();
             }
         );
         add(loginButton, "center, grow, span");
@@ -138,7 +135,7 @@ public class Landing extends NavigablePanel {
         UserController uController = new UserController();
         User foundUser = uController.getUserByUsername(this.usernameField.getInput());
         if (foundUser == null) {
-            this.loginWarning.setText("Usuário não encontrado!");
+            this.loginWarning.setText("Usuário ou Senha Inválida!");
             return;
         } else {
             System.out.format("LOGIN: found %s\n", foundUser.getUserName());
@@ -153,9 +150,11 @@ public class Landing extends NavigablePanel {
             )
         );
         if (matches) {
+            // TODO: Store Session Token
+            clearAllFields();
             switchTo(UserFeed.IDENTIFIER);
         } else {
-            this.loginWarning.setText("Senha incorreta!");
+            this.loginWarning.setText("Usuário ou Senha Inválida!");
         }
     }
 }
