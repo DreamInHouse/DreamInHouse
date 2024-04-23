@@ -3,6 +3,7 @@ package com.dreaminhouse.views.session;
 import com.dreaminhouse.views.Constants;
 import com.dreaminhouse.views.camera.CameraPanel;
 import com.dreaminhouse.views.components.NavigablePanel;
+import com.dreaminhouse.views.feed.UserFeed;
 
 import java.awt.Color;
 import java.awt.event.ActionEvent;
@@ -59,5 +60,13 @@ public class AccountCreationNext extends NavigablePanel {
             cameraErrorLabel.setFont(Constants.TEXT_FONT);
             this.add(cameraErrorLabel, "center, span");
         }
+
+        // Skip Button
+        JButton skipButton = new JButton("Pular");
+        skipButton.setFont(Constants.TEXT_FONT);
+        skipButton.addActionListener(
+            (ActionEvent e) -> switchTo(UserFeed.IDENTIFIER)
+        );
+        add(skipButton);
     }
 }
