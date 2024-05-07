@@ -52,7 +52,7 @@ public class MainWindow extends JFrame {
         this.contentPanel.add(this.userFeedPanel, UserFeed.IDENTIFIER);
 
         // Set layout default visibility
-        this.cardLayout.show(this.contentPanel, Landing.IDENTIFIER);
+        this.cardLayout.show(this.contentPanel, UserFeed.IDENTIFIER);
 
         // Set visibility
         add(this.contentPanel);
