@@ -158,6 +158,13 @@ public class MainFeed extends NavigablePanel {
         commentsLabel.setForeground(Color.WHITE);
         postPanel.add(commentsLabel, "wrap");
 
+        ImageIcon barIcon = new ImageIcon(getClass().getResource("/images/bar.png"));
+        Image scaledImage2 = barIcon.getImage().getScaledInstance(150, -1, Image.SCALE_SMOOTH);
+        barIcon = new ImageIcon(scaledImage2);
+        JLabel profileImageLabel2 = new JLabel(barIcon);
+        profileImageLabel2.setHorizontalAlignment(JLabel.CENTER);
+        postPanel.add(profileImageLabel2, "center, wrap, span 2");
+
         feedPanel.add(postPanel, "wrap, growx");
     }
 }
