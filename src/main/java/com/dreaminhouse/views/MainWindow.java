@@ -2,6 +2,8 @@ package com.dreaminhouse.views;
 
 import javax.swing.*;
 
+import com.dreaminhouse.Main;
+import com.dreaminhouse.views.feed.MainFeed;
 import com.dreaminhouse.views.feed.UserFeed;
 import com.dreaminhouse.views.session.AccountCreation;
 import com.dreaminhouse.views.session.AccountCreationNext;
@@ -18,6 +20,7 @@ public class MainWindow extends JFrame {
     public AccountCreationNext accountCreationNextPanel;
     public PasswordRecovery passwordRecoveryPanel;
     public UserFeed userFeedPanel;
+    public MainFeed mainFeedPanel;
 
     public MainWindow() {
         // Set Behaviour
@@ -51,8 +54,11 @@ public class MainWindow extends JFrame {
         this.userFeedPanel = new UserFeed();
         this.contentPanel.add(this.userFeedPanel, UserFeed.IDENTIFIER);
 
+        this.mainFeedPanel = new MainFeed();
+        this.contentPanel.add(this.mainFeedPanel, MainFeed.IDENTIFIER);
+
         // Set layout default visibility
-        this.cardLayout.show(this.contentPanel, UserFeed.IDENTIFIER);
+        this.cardLayout.show(this.contentPanel, MainFeed.IDENTIFIER);
 
         // Set visibility
         add(this.contentPanel);
