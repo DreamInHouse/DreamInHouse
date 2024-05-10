@@ -13,7 +13,7 @@ public class Constants {
 
     // Colors
     public static Color TITLE_COLOR = new Color(35, 185, 250);
-    public static Color BACKGROUND_COLOR = new Color(17, 19, 19);
+    public static Color BACKGROUND_COLOR = new Color(0, 0, 0);
 
     // Fonts
     public static Font TITLE_FONT = new Font("Berkshire Swash", Font.PLAIN, 48);

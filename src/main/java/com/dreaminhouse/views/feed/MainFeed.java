@@ -3,7 +3,10 @@ package com.dreaminhouse.views.feed;
 import java.awt.Color;
 import java.awt.Cursor;
 import java.awt.Font;
+import java.awt.Image;
 import java.awt.event.ActionEvent;
+
+import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
@@ -25,6 +28,16 @@ public class MainFeed extends NavigablePanel {
         setLayout(new MigLayout("center, fillx", "[25%][][]", "10%[][][][][][][][]"));
         setBackground(Constants.BACKGROUND_COLOR);
 
+        // Logo Placeholder
+        JTextArea logoArea = new JTextArea("DH");
+        logoArea.setFont(new Font("Arial", Font.BOLD, 35));
+        logoArea.setLineWrap(true);
+        logoArea.setWrapStyleWord(true);
+        logoArea.setEditable(false);
+        logoArea.setOpaque(false);
+        logoArea.setForeground(Color.WHITE);
+        add(logoArea, "cell 0 0");
+
         // Test Button
         JButton testButton = new JButton("Voltar");
         testButton.setFont(new Font("Arial", Font.PLAIN, 14));
@@ -37,31 +50,43 @@ public class MainFeed extends NavigablePanel {
         add(testButton, "cell 1 9, center");
 
         // Burger Menu Button
-        JButton burgerButton = new JButton("-");
+        JButton menuButton = new JButton("M");
+        menuButton.setFont(new Font("Arial", Font.PLAIN, 16));
+        menuButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
+        menuButton.setForeground(Color.WHITE);
+        menuButton.setBackground(new Color(25, 25, 25));
+        menuButton.setBorderPainted(false);
+        menuButton.setFocusPainted(false);
+        menuButton.addActionListener((ActionEvent e) -> toggleSidebar());
+        add(menuButton, "cell 1 0, align center");
+
+        // Search Button
+        JButton burgerButton = new JButton("S");
         burgerButton.setFont(new Font("Arial", Font.PLAIN, 16));
         burgerButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
         burgerButton.setForeground(Color.WHITE);
-        burgerButton.setBackground(new Color(35, 185, 250));
+        burgerButton.setBackground(new Color(25, 25, 25));
         burgerButton.setBorderPainted(false);
         burgerButton.setFocusPainted(false);
-        burgerButton.addActionListener((ActionEvent e) -> toggleSidebar());
         add(burgerButton, "cell 1 0, align center");
 
         // Sidebar
         sidebarPanel = new JPanel(new MigLayout("fill, flowx"));
-        sidebarPanel.setBackground(new Color(25, 27, 28));
+        sidebarPanel.setBackground(new Color(15, 15, 15));
         sidebarPanel.setBorder(new EmptyBorder(50, 10, 50, 10));
         addSidebarButton(sidebarPanel, "Home");
+        addSidebarButton(sidebarPanel, "Publicar");
         addSidebarButton(sidebarPanel, "Chat");
         addSidebarButton(sidebarPanel, "Perfil");
         addSidebarButton(sidebarPanel, "Configurações");
-        add(sidebarPanel, "cell 0 0, growy, spany 10, hidemode 3");
+        sidebarPanel.setVisible(false);
+        add(sidebarPanel, "cell 0 1, growy, spany 10, hidemode 3");
 
         // Feed Panel with Scroll
         feedPanel = new JPanel(new MigLayout("fillx, wrap 1, gapy 10", "", "[]10[]"));
         JScrollPane scrollPane = new JScrollPane(feedPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        add(scrollPane, "cell 1 1 2 8, grow");
+        add(scrollPane, "cell 1 1 2");
 
         // Add sample posts
         addPost("User1", "Descrição da postagem 1", "10/05/2024", 20, 5);
@@ -96,20 +121,26 @@ public class MainFeed extends NavigablePanel {
     private void addPost(String user, String description, String date, int likes, int comments) {
         JPanel postPanel = new JPanel(new MigLayout("fillx, insets 0", "", "[][][][]"));
         postPanel.setBackground(new Color(20, 20, 20));
-        postPanel.setBorder(new EmptyBorder(10, 10, 10, 10));
 
         JLabel userLabel = new JLabel("@" + user);
         userLabel.setFont(new Font("Arial", Font.BOLD, 14));
         userLabel.setForeground(Color.WHITE);
         postPanel.add(userLabel, "wrap, gapbottom 5");
 
+        ImageIcon profileImageIcon = new ImageIcon(getClass().getResource("/images/post_template.png"));
+        Image scaledImage = profileImageIcon.getImage().getScaledInstance(180, -1, Image.SCALE_SMOOTH);
+        profileImageIcon = new ImageIcon(scaledImage);
+        JLabel profileImageLabel = new JLabel(profileImageIcon);
+        profileImageLabel.setHorizontalAlignment(JLabel.CENTER);
+        postPanel.add(profileImageLabel, "center, wrap, span 2, gapbottom 30");
+
         JTextArea descriptionArea = new JTextArea(description);
         descriptionArea.setFont(new Font("Arial", Font.PLAIN, 14));
         descriptionArea.setLineWrap(true);
         descriptionArea.setWrapStyleWord(true);
         descriptionArea.setEditable(false);
+        descriptionArea.setOpaque(false);
         descriptionArea.setForeground(Color.WHITE);
-        descriptionArea.setOpaque(false); // Make JTextArea transparent
         postPanel.add(descriptionArea, "wrap, gapbottom 5");
 
         JLabel dateLabel = new JLabel(date);
