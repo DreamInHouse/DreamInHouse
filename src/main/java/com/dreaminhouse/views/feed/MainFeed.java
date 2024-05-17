@@ -6,6 +6,7 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 
+import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JLabel;
@@ -13,9 +14,11 @@ import javax.swing.JPanel;
 import javax.swing.JScrollPane;
 import javax.swing.JTextArea;
 import javax.swing.border.EmptyBorder;
+
 import com.dreaminhouse.views.Constants;
 import com.dreaminhouse.views.components.NavigablePanel;
 import com.dreaminhouse.views.session.Landing;
+
 import net.miginfocom.swing.MigLayout;
 
 public class MainFeed extends NavigablePanel {
@@ -50,25 +53,37 @@ public class MainFeed extends NavigablePanel {
         add(testButton, "cell 1 9, center");
 
         // Burger Menu Button
-        JButton menuButton = new JButton("M");
+        JButton menuButton = new JButton("");
         menuButton.setFont(new Font("Arial", Font.PLAIN, 16));
         menuButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        menuButton.setForeground(Color.WHITE);
-        menuButton.setBackground(new Color(25, 25, 25));
+        menuButton.setBackground(Color.BLACK);
         menuButton.setBorderPainted(false);
         menuButton.setFocusPainted(false);
         menuButton.addActionListener((ActionEvent e) -> toggleSidebar());
         add(menuButton, "cell 1 0, align center");
 
+        ImageIcon profileImageIcon4 = new ImageIcon(getClass().getResource("/icons/menu.png"));
+        Image scaledImage4 = profileImageIcon4.getImage().getScaledInstance(50, -1, Image.SCALE_SMOOTH);
+        profileImageIcon4 = new ImageIcon(scaledImage4);
+        JLabel profileImageLabel4 = new JLabel(profileImageIcon4);
+        profileImageLabel4.setHorizontalAlignment(JLabel.CENTER);
+        menuButton.add(profileImageLabel4, "center, wrap, span 2, gapbottom 30");
+
         // Search Button
-        JButton burgerButton = new JButton("S");
+        JButton burgerButton = new JButton("");
         burgerButton.setFont(new Font("Arial", Font.PLAIN, 16));
         burgerButton.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        burgerButton.setForeground(Color.WHITE);
-        burgerButton.setBackground(new Color(25, 25, 25));
+        burgerButton.setBackground(Color.BLACK);
         burgerButton.setBorderPainted(false);
         burgerButton.setFocusPainted(false);
+
         add(burgerButton, "cell 1 0, align center");
+        ImageIcon profileImageIcon3 = new ImageIcon(getClass().getResource("/icons/search.png"));
+        Image scaledImage3 = profileImageIcon3.getImage().getScaledInstance(35, -1, Image.SCALE_SMOOTH);
+        profileImageIcon3 = new ImageIcon(scaledImage3);
+        JLabel profileImageLabel3 = new JLabel(profileImageIcon3);
+        profileImageLabel3.setHorizontalAlignment(JLabel.CENTER);
+        burgerButton.add(profileImageLabel3, "center, wrap, span 2, gapbottom 30");
 
         // Sidebar
         sidebarPanel = new JPanel(new MigLayout("fill, flowx"));
@@ -84,6 +99,7 @@ public class MainFeed extends NavigablePanel {
 
         // Feed Panel with Scroll
         feedPanel = new JPanel(new MigLayout("fillx, wrap 1, gapy 10", "", "[]10[]"));
+        feedPanel.setBackground(Color.BLACK);
         JScrollPane scrollPane = new JScrollPane(feedPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(scrollPane, "cell 1 1 2");
@@ -111,8 +127,8 @@ public class MainFeed extends NavigablePanel {
     private void styleButton(JButton button) {
         button.setFont(new Font("Arial", Font.PLAIN, 16));
         button.setCursor(new Cursor(Cursor.HAND_CURSOR));
-        button.setForeground(Color.WHITE);
-        button.setBackground(new Color(35, 185, 250));
+        button.setForeground(Color.BLACK);
+        button.setBackground(Color.WHITE);
         button.setBorderPainted(false);
         button.setFocusPainted(false);
     }
