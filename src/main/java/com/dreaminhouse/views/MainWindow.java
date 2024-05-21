@@ -3,6 +3,7 @@ package com.dreaminhouse.views;
 import javax.swing.*;
 
 import com.dreaminhouse.Main;
+import com.dreaminhouse.models.User;
 import com.dreaminhouse.views.feed.MainFeed;
 import com.dreaminhouse.views.feed.UserFeed;
 import com.dreaminhouse.views.session.AccountCreation;

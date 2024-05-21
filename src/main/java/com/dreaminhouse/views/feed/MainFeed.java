@@ -85,12 +85,27 @@ public class MainFeed extends NavigablePanel {
         profileImageLabel3.setHorizontalAlignment(JLabel.CENTER);
         burgerButton.add(profileImageLabel3, "center, wrap, span 2, gapbottom 30");
 
+        // User Info
+        JPanel profilePanel = new JPanel(new MigLayout("center"));
+        profilePanel.setBackground(Constants.BACKGROUND_COLOR);
+        Font labelFont = new Font("Arial", Font.BOLD, 22);
+        JLabel nameLabel = new JLabel("Usuário");
+        nameLabel.setFont(labelFont);
+        nameLabel.setForeground(Color.WHITE);
+        profilePanel.add(nameLabel, "center, wrap, span");
+        ImageIcon profileImageIcon = new ImageIcon(getClass().getResource("/images/orb.png"));
+        Image scaledImage = profileImageIcon.getImage().getScaledInstance(50, -1, Image.SCALE_SMOOTH);
+        profileImageIcon = new ImageIcon(scaledImage);
+        JLabel profileImageLabel = new JLabel(profileImageIcon);
+        profileImageLabel.setHorizontalAlignment(JLabel.CENTER);
+        profilePanel.add(profileImageLabel, "center, wrap, span 2, gapbottom 30");
+
         // Sidebar
         sidebarPanel = new JPanel(new MigLayout("fill, flowx"));
         sidebarPanel.setBackground(new Color(15, 15, 15));
         sidebarPanel.setBorder(new EmptyBorder(50, 10, 50, 10));
+        addSidebarButton(sidebarPanel, "Novo post");
         addSidebarButton(sidebarPanel, "Home");
-        addSidebarButton(sidebarPanel, "Publicar");
         addSidebarButton(sidebarPanel, "Chat");
         addSidebarButton(sidebarPanel, "Perfil");
         addSidebarButton(sidebarPanel, "Configurações");
@@ -100,6 +115,7 @@ public class MainFeed extends NavigablePanel {
         // Feed Panel with Scroll
         feedPanel = new JPanel(new MigLayout("fillx, wrap 1, gapy 10", "", "[]10[]"));
         feedPanel.setBackground(Color.BLACK);
+        feedPanel.setBorder(new EmptyBorder(20, 20, 20, 20));
         JScrollPane scrollPane = new JScrollPane(feedPanel);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         add(scrollPane, "cell 1 1 2");
